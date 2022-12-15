@@ -63,3 +63,30 @@ ChatBot Move Assignment Operator
 ChatBot Destructor
 ChatBot Destructor 
 ```
+# Unit test
+Unit test code and resource are added in HEAD\~2 and HEAD\~1 on branch `master`
+To add unit test to your code, do following step.
+
+## Add this repository to you remote list in local repository
+```
+git remote add Membot-UT git@github.com:CplusTraining/Unittest-Memory-Management-Chatbot.git
+git fetch Membot-UT
+```
+
+## Cherry-pick 2 commits of unit test to the top of your local membot branch
+```
+git cherry-pick aa55dd6^..14f2127
+```
+
+## Build the unit test
+```
+cd CppND-Memory-Management-Chatbot
+mkdir build && cd build
+cmake ../
+make
+```
+
+## Run the unit test
+```
+./membot_test
+```
