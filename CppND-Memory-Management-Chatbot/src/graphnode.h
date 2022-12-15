@@ -55,6 +55,9 @@ public:
     //// EOF STUDENT CODE
 
     void MoveChatbotToNewNode(GraphNode *newNode);
+#ifdef UT
+    ChatBot *GetChatBot() {return &_chatBot;}
+#endif
 };
 
 #endif /* GRAPHNODE_H_ */

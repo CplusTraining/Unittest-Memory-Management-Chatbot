@@ -11,11 +11,14 @@ const int width = 414;
 const int height = 736;
 
 // wxWidgets APP
+#ifndef UT
 IMPLEMENT_APP(ChatBotApp);
+#endif
 
 std::string dataPath = "../";
 std::string imgBasePath = dataPath + "images/";
 
+#ifndef UT
 bool ChatBotApp::OnInit()
 {
     // create window with name and show it
@@ -24,6 +27,7 @@ bool ChatBotApp::OnInit()
 
     return true;
 }
+#endif
 
 // wxWidgets FRAME
 ChatBotFrame::ChatBotFrame(const wxString &title) : wxFrame(NULL, wxID_ANY, title, wxDefaultPosition, wxSize(width, height))

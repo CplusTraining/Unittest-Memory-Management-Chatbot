@@ -42,6 +42,11 @@ public:
 
     // communication
     void ReceiveMessageFromUser(std::string message);
+
+#ifdef UT
+    GraphNode *CurrentNode() {return _currentNode;}
+    GraphNode *RootNode() {return _rootNode;}
+#endif
 };
 
 #endif /* CHATBOT_H_ */
