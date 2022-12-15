@@ -88,6 +88,7 @@ public:
     DECLARE_EVENT_TABLE()
 };
 
+#ifndef UT
 // wxWidgets app that hides main()
 class ChatBotApp : public wxApp
 {
@@ -95,5 +96,6 @@ public:
     // events
     virtual bool OnInit();
 };
+#endif
 
 #endif /* CHATGUI_H_ */

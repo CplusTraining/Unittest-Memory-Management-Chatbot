@@ -49,6 +49,9 @@ public:
     void SendMessageToChatbot(std::string message);
     void SendMessageToUser(std::string message);
     wxBitmap *GetImageFromChatbot();
+#ifdef UT
+    std::vector<std::unique_ptr<GraphNode>> const&  Nodes(){return _nodes;};
+#endif
 };
 
 #endif /* CHATLOGIC_H_ */

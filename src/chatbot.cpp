@@ -27,7 +27,11 @@ ChatBot::ChatBot(std::string filename)
     _rootNode = nullptr;
 
     // load image into heap memory
+#ifdef UT
+    _image = new wxBitmap();
+#else
     _image = new wxBitmap(filename, wxBITMAP_TYPE_PNG);
+#endif
 }
 
 ChatBot::~ChatBot()
@@ -93,8 +97,10 @@ void ChatBot::SetCurrentNode(GraphNode *node)
     std::uniform_int_distribution<int> dis(0, answers.size() - 1);
     std::string answer = answers.at(dis(generator));
 
+#ifndef UT
     // send selected node answer to user
     _chatLogic->SendMessageToUser(answer);
+#endif
 }
 
 int ChatBot::ComputeLevenshteinDistance(std::string s1, std::string s2)
